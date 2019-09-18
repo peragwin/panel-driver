@@ -7,7 +7,7 @@
 #include "soc/timer_group_struct.h"
 #include "soc/timer_group_reg.h"
 
-#define PxMATRIX_SPI_SPEED 30000000
+#define PxMATRIX_SPI_SPEED 20000000
 #define PxMATRIX_COLOR_DEPTH 16
 #include <PxMatrix.h>
 
@@ -52,6 +52,7 @@ void setup() {
   Serial.begin(115200);
 
   display.begin(SCAN_RATE);
+  display.setDriverChip(FM6126A);
   display.setCursor(0,0);
   display.print("LED Panel Driver v0.1");
   display.setBrightness(255);
